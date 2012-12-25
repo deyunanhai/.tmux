@@ -1,0 +1,10 @@
+#session1
+new-session -s mysession
+new-window
+new-window -t 2 -n log -c "/var/log"
+## 2番のウィンドウの出力を監視する
+#set-window-option -t 2 monitor-activity on
+## 3番のウィンドウをメイン/横分割にしてメインのペイン幅を45にする
+split-window -d
+set-window-option -t 3 main-pane-width 45
+select-layout -t 3 main-vertical

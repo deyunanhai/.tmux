@@ -1,0 +1,9 @@
+#!/bin/sh
+tmux new-session -d -s hawkhost
+#tmux new-window -t hawkhost:2 -n 'serv1' 'ssh bocellisoft@xxxx'
+tmux new-window -t hawkhost:99 -n 'log' -c "/var/log"
+tmux split-window -d -t hawkhost:99
+tmux set-window-option -t hawkhost:99 main-pane-width 45
+tmux select-layout -t hawkhost:99 main-vertical
+#tmux select-window -t hawkhost:3
+tmux -2 attach-session -t hawkhost
